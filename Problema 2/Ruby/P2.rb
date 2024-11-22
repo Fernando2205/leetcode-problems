@@ -27,24 +27,3 @@ end
   
     dummy_head.next
   end
-  
-  # Métodos auxiliares para pruebas
-  def create_list(arr)
-    return nil if arr.empty?
-    dummy = ListNode.new
-    current = dummy
-    arr.each do |val|
-      current.next = ListNode.new(val)
-      current = current.next
-    end
-    dummy.next
-  end
-  
-  def list_to_array(head)
-    result = []
-    while head
-      result << head.val
-      head = head.next
-    end
-    result
-  end
