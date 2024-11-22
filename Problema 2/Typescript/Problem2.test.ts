@@ -1,6 +1,6 @@
 // src/Problem.test.ts
 
-import { ListNode, addTwoNumbers, createList, listToArray } from './Problem';
+import { ListNode, addTwoNumbers, createList, listToArray } from './Problem2';
 
 describe('addTwoNumbers', () => {
     interface TestCase {
