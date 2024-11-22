@@ -1,0 +1,39 @@
+[
+    {
+      "description": "Caso 1: Lista normal, eliminar el segundo nodo desde el final",
+      "input": [1, 2, 3, 4, 5],
+      "n": 2,
+      "expected_output": [1, 2, 3, 5]
+    },
+    {
+      "description": "Caso 2: Lista con un solo elemento, eliminar ese nodo",
+      "input": [1],
+      "n": 1,
+      "expected_output": []
+    },
+    {
+      "description": "Caso 3: Eliminar el primer nodo desde el final",
+      "input": [1, 2, 3],
+      "n": 3,
+      "expected_output": [2, 3]
+    },
+    {
+      "description": "Caso 4: Valor n mayor que el tamaño de la lista",
+      "input": [1, 2, 3],
+      "n": 4,
+      "expected_error": "n es mayor que el número de nodos en la lista"
+    },
+    {
+      "description": "Caso 5: Lista vacía",
+      "input": [],
+      "n": 1,
+      "expected_error": "El número de nodos en la lista debe estar entre 1 y 30"
+    },
+    {
+      "description": "Caso 6: Lista con valores extremos",
+      "input": [0, 100],
+      "n": 2,
+      "expected_output": [100]
+    }
+  ]
+  
