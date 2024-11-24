@@ -1,4 +1,4 @@
-# list_node.rb
+# list_node
 class ListNode
     attr_accessor :val, :next
     def initialize(val = 0, next_node = nil)
@@ -8,22 +8,23 @@ class ListNode
 end
   
   def add_two_numbers(l1, l2)
-    dummy_head = ListNode.new
-    current = dummy_head
-    carry = 0
-  
-    while l1 || l2 || carry > 0
-      val1 = l1 ? l1.val : 0
-      val2 = l2 ? l2.val : 0
-      sum = val1 + val2 + carry
-  
-      carry = sum / 10
-      current.next = ListNode.new(sum % 10)
-      current = current.next
+    auxiliar_node = ListNode.new
+    actual_node = auxiliar_node
+    tens = 0
+
+    while l1 || l2 || tens > 0
+      value1 = l1 ? l1.val : 0
+      value2 = l2 ? l2.val : 0
+      
+      sum = value1 + value2 + tens
+      tens = sum / 10
+      
+      actual_node.next = ListNode.new(sum % 10)
+      actual_node = actual_node.next
   
       l1 = l1.next if l1
       l2 = l2.next if l2
     end
   
-    dummy_head.next
+     auxiliar_node.next
   end

@@ -3,15 +3,15 @@ require_relative 'P2'
 require 'test/unit'
 
 # Métodos auxiliares para pruebas
-def create_list(arr)
-  return nil if arr.empty?
-  dummy = ListNode.new
-  current = dummy
-  arr.each do |val|
-    current.next = ListNode.new(val)
-    current = current.next
+def create_list(array)
+  return nil if array.empty?
+  auxiliar_node = ListNode.new
+  actual_node = auxiliar_node
+  array.each do |val|
+    actual_node.next = ListNode.new(val)
+    actual_node = actual_node.next
   end
-  dummy.next
+  auxiliar_node.next
 end
 
 def list_to_array(head)
@@ -22,13 +22,14 @@ def list_to_array(head)
   end
   result
 end
+
 class TestAddTwoNumbers < Test::Unit::TestCase
   def setup
     @test_cases = [
       {l1: [2,4,3], l2: [5,6,4], expected: [7,0,8], description: '342 + 465 = 807'},
       {l1: [0], l2: [0], expected: [0], description: '0 + 0 = 0'},
-      {l1: [9,9,9,9,9,9,9], l2: [9,9,9,9], expected: [8,9,9,9,0,0,0,1], description: '9999999 + 9999'},
-      {l1: [1,8], l2: [0], expected: [1,8], description: '81 + 0'},
+      {l1: [9,9,9,9,9,9,9], l2: [9,9,9,9], expected: [8,9,9,9,0,0,0,1], description: '9999999 + 9999 = 10009998'},
+      {l1: [1,8], l2: [0], expected: [1,8], description: '81 + 0 = 81'},
       {l1: [5], l2: [5], expected: [0,1], description: '5 + 5 = 10'}
     ]
   end

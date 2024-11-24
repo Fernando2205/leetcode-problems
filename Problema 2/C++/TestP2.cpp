@@ -26,16 +26,15 @@ std::vector<int> listToVector(ListNode *head)
 // Función auxiliar para crear una lista enlazada a partir de un vector.
 ListNode *createList(const std::vector<int> &nums)
 {
-    ListNode *dummyHead = new ListNode(0);
-    ListNode *current = dummyHead;
+    ListNode *auxiliar_node = new ListNode(0);
+    ListNode *current = auxiliar_node;
     for (int num : nums)
     {
         current->next = new ListNode(num);
         current = current->next;
     }
-    ListNode *result = dummyHead->next;
-    delete dummyHead;
-    return result;
+
+    return auxiliar_node->next;
 }
 
 // Función para imprimir una lista enlazada.
@@ -54,7 +53,7 @@ void printList(ListNode *head)
 void runTests()
 {
     std::vector<TestCase> testCases = {
-        {{2, 4, 3}, {5, 6, 4}, {7, 0, 8}, "342 + 465 = 807"},
+        {{2, 4, 3}, {5, 6, 4}, {7, 0, 4}, "342 + 465 = 807"},
         {{0}, {0}, {0}, "0 + 0 = 0"},
         {{9, 9, 9, 9, 9, 9, 9}, {9, 9, 9, 9}, {8, 9, 9, 9, 0, 0, 0, 1}, "9999999 + 9999 = 10009998"},
         {{1, 8}, {0}, {1, 8}, "81 + 0 = 81"},

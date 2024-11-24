@@ -5,9 +5,10 @@ class ListNode
       @val = val
       @next = _next
     end
-  end
+end
   
   class Solution
+    #codigo para leetcode
     def remove_nth_from_end(head, n)
       raise 'n debe ser al menos 1' if n < 1
   
@@ -52,5 +53,6 @@ class ListNode
       end
       lst
     end
+    #fin de codigo para leetcode
   end
   

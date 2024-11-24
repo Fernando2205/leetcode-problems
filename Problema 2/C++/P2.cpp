@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 // Definición de la lista enlazada simple.
 struct ListNode
 {
@@ -16,29 +15,27 @@ public:
     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
     {
         // Inicio de código compatible con leetcode
-        ListNode *dummyHead = new ListNode(0);
-        ListNode *current = dummyHead;
-        int carry = 0;
+        ListNode *auxiliar_node = new ListNode(0);
+        ListNode *actual_node = auxiliar_node;
+        int tens = 0;
 
-        while (l1 != nullptr || l2 != nullptr || carry > 0)
+        while (l1 != nullptr || l2 != nullptr || tens > 0)
         {
-            int val1 = (l1 != nullptr) ? l1->val : 0;
-            int val2 = (l2 != nullptr) ? l2->val : 0;
-            int sum = val1 + val2 + carry;
+            int value1 = (l1 != nullptr) ? l1->val : 0;
+            int value2 = (l2 != nullptr) ? l2->val : 0;
 
-            carry = sum / 10;
-            current->next = new ListNode(sum % 10);
-            current = current->next;
+            int sum = value1 + value2 + tens;
+            tens = sum / 10;
+
+            actual_node->next = new ListNode(sum % 10);
+            actual_node = actual_node->next;
 
             if (l1 != nullptr)
                 l1 = l1->next;
             if (l2 != nullptr)
                 l2 = l2->next;
         }
-
-        ListNode *result = dummyHead->next;
-        delete dummyHead;
-        return result;
+        return auxiliar_node->next;
         // Fin de código compatible con leetcode
     }
 };
